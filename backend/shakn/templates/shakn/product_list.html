@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'shakn/base.html' %}
+{% block content %}
+    <h1>Products</h1>
+    <ul>
+       {% for product in products %} 
+       <a href="{{product.pk}}"><h3>{{product.name}}</h3></a>
+       <img src="{{product.photo_url}}" alt="{{product.name}}"/>
+       {% endfor %}
+    </ul>
+{% endblock %}
