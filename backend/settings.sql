@@ -1,4 +1,4 @@
 CREATE DATABASE shakn;
-CREATE USER shaknuser WITH PASSWORD 'shakn';
+CREATE USER shaknuser3 WITH PASSWORD 'shakn';
 GRANT ALL PRIVILEGES ON DATABASE shakn TO shaknuser; 
 

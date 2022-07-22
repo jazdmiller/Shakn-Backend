@@ -9,27 +9,27 @@ function DrawerComp() {
     <>
         <Drawer open={open} onClose={()=>setOpen(false)}>
             <List>
-                <ListItemButton>
+                <ListItemButton onClick={()=> setOpen(false)}>
                     <ListItemIcon>
                         <ListItemText>Cart</ListItemText>
                     </ListItemIcon>
                 </ListItemButton>
-                <ListItemButton>
+                <ListItemButton onClick={()=> setOpen(false)}>
                     <ListItemIcon>
                         <ListItemText>Shop</ListItemText>
                     </ListItemIcon>
                 </ListItemButton>
-                <ListItemButton>
+                <ListItemButton onClick={()=> setOpen(false)}>
                     <ListItemIcon>
                         <ListItemText>Cocktail Finder</ListItemText>
                     </ListItemIcon>
                 </ListItemButton>
-                <ListItemButton>
+                <ListItemButton onClick={()=> setOpen(false)}>
                     <ListItemIcon>
                         <ListItemText>Login</ListItemText>
                     </ListItemIcon>
                 </ListItemButton>
-                <ListItemButton>
+                <ListItemButton onClick={()=> setOpen(false)}>
                     <ListItemIcon>
                         <ListItemText>Sign Up</ListItemText>
                     </ListItemIcon>

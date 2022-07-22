@@ -8,11 +8,12 @@ import { AppBar,
          Toolbar, 
          Typography,
          useTheme,
-         useMediaQuery
+         useMediaQuery,
  } from '@mui/material'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Box } from '@mui/system';
 import DrawerComp from './Drawer';
+import { Link } from 'react-router-dom'
 
 function Navbar({links}) {
 
@@ -37,22 +38,22 @@ function Navbar({links}) {
                     </Typography>
                 </Grid>
                 <Grid item xs={5}>
-                    <Tabs indicatorColor="secondary" 
+                    {/* <Tabs indicatorColor="secondary" 
                           textColor="inherit" 
                           value={value} 
-                          onChange={(e, val) => setValue(val)}>
+                          onChange={(e, val) => setValue(val)}> */}
 
-                        <Tab label="Shop"/>
-                        <Tab label="Cocktail Finder"/>
+                        <Link to="/products" style={{ textDecoration: 'none ', color: 'white' }}><Tab label="Shop"></Tab></Link>
+                        <Link to="/cocktailfinder" style={{ textDecoration: 'none ', color: 'white' }}><Tab label="Cocktail Finder"/></Link>
 
-                    </Tabs>
+                    {/* </Tabs> */}
                 </Grid>
                 <Grid item xs={1} />
                 <Grid item xs={4}>
                     <Box display="flex">
-                        <Button sx={{marginLeft:'auto', background: 'none', borderColor: 'none'}} variant="contained">Cart</Button>
-                        <Button sx={{marginLeft:1}} variant="contained">Login</Button>
-                        <Button sx={{marginLeft:1}}variant="contained">Sign Up</Button>
+                        <Link to="/cart" style={{ textDecoration: 'none ', color: 'white' }}><Tab label="Cart"></Tab></Link>
+                        <Link to="/login" style={{ textDecoration: 'none ', color: 'white' }}><Tab label="Login"></Tab></Link>
+                        <Link to="/signup" style={{ textDecoration: 'none ', color: 'white' }}><Tab label="Sign Up"></Tab></Link>
                     </Box>
                 </Grid>
             </Grid>}

@@ -1,9 +1,0 @@
-<h2>{{product.name}}</h2> <a href="">Edit</a>
-<img src="{{product.photo_url}}" alt="{{product.name}}">
-<p>{{product.description}}</p>
-
-<h2>Categories</h2>
-{% for category in product.category.all %}
-<h3>{{category}}</h3>
-{% endfor %}
-
