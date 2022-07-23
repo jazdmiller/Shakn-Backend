@@ -10,10 +10,13 @@ import { Grid,
          ListItemText,
          TextField,
          MenuItem,
-         Divider
+         Divider,
+         IconButton
  } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { listProductDetails } from '../actions/productActions'
+import Navbar from '../components/Navbar'
+import KeyboardBackspaceOutlinedIcon from '@mui/icons-material/KeyboardBackspaceOutlined';
 
 function ProductPage() {
     const quantities = [
@@ -50,18 +53,22 @@ function ProductPage() {
       navigate(`/cart/${id}?qty=${qty}`)
   }
   return (
-    <div>
-        <Link to="/products"><Button variant="text">Go Back</Button></Link>
-        <Grid container spacing={4} justifyContent="center">
-            <Grid item xs={6}>
-                <img src={product.image} style={{ height: 600, width: 500, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}/>
+    <div className="shop-container">
+      <div>
+      < Navbar />
+      <div style={{ marginTop: 150}}/>
+        <Link style={{ marginLeft: 130}}to="/products"><IconButton><KeyboardBackspaceOutlinedIcon fontSize="large" sx={{}}/></IconButton></Link>
+        <div style={{ marginBottom: 10}}/>
+        <Grid container spacing={4}  sx={{ marginLeft: 14, marginRight: 2, marginTop: -5}}>
+            <Grid item xs={5}>
+                <img src={product.image} style={{ height: 500, width: 500, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}/>
             </Grid>
-            <Grid item xs={6}>
-                <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+            <Grid container item xs={6} display="flex" justifyContent="center" alignItems="center">
+                <Box sx={{ boxShadow: 2, width: '50%', height: 340, maxWidth: 360, bgcolor: '#fffcf2' }}>
                     {/* <nav aria-label="main mailbox folders"> */}
                         <List>
                         <ListItem >                        
-                            <ListItemText primary={product.name} />    
+                            <ListItemText style={{ fontSize: 20}} primary={product.name} />    
                         </ListItem>
                         <Divider />
                         <ListItem >
@@ -99,6 +106,7 @@ function ProductPage() {
         <Grid container spacing={2}>
          
         </Grid>
+        </div>
     </div>
   )
 }

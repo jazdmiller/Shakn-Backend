@@ -11,18 +11,16 @@ function ProductCard({ product }) {
         <CardActionArea>
         <CardMedia
         component="img"
-        height="140"
+        height="250"
         image={product.image}
         alt="green iguana"
         />
-        <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <CardContent style={{ backgroundColor: "#DEE9F6"}}>
+        <Typography style={{color: "#707070" }} gutterBottom variant="h5" component="div">
             {product.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-            {product.description}
-        </Typography>
-        <Typography gutterBottom variant="h6" component="div">
+
+        <Typography style={{color: "#707070" }} gutterBottom variant="h6" component="div">
             ${product.price}
         </Typography>
         </CardContent>

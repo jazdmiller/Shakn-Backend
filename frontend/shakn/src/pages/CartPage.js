@@ -18,6 +18,9 @@ from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeFromCart } from '../actions/cartActions'
+import '../assets/cart.css'
+import Navbar from '../components/Navbar';
+
 
 function CartPage() {
   const [searchParams,setSearchParams]=useSearchParams()
@@ -60,19 +63,24 @@ const removeFromCartHandler = (id) => {
 }
 
   return (
+  
+      <div >
+          <Navbar />
+          <div style={{ marginTop:150 }}/>
+          <h1 className="shop-title">Your Cart</h1>
     <Grid container spacing={4}>
         <Grid item xs={8}>
-            <h1>Shopping Cart</h1>
+            
             {cartItems.length === 0 ? 
             <h2>Your cart is empty.<Link to='/products'>Go Back</Link></h2>
-             : <List sx={{ width: '100%', maxWidth:600, bgcolor: 'background.paper' }}>
+             : <List sx={{ marginLeft: 15, marginTop: 5,width: '100%', maxWidth:600, bgcolor: '#DEE9F6' }}>
                   {cartItems.map(item => (
                     <ListItem key={item.product}>
                       <ListItemAvatar>
                         <Avatar src={item.image}/>
                       </ListItemAvatar>
                       <ListItemText>
-                        <Link to={`/product/${item.product}`}>{item.name}</Link>
+                        <Link style={{ textDecoration: "none", color: "#6F7130"}} to={`/product/${item.product}`}>{item.name}</Link>
                       </ListItemText>
                       <ListItemText>${item.price}</ListItemText>
                       <TextField
@@ -89,26 +97,28 @@ const removeFromCartHandler = (id) => {
                               </MenuItem>
                           ))}
                       </TextField>
-                      <IconButton onClick={() => removeFromCartHandler(item.product)} aria-label="delete" color="primary">
+                      <IconButton onClick={() => removeFromCartHandler(item.product)} aria-label="delete" sx={{ color: "gray", marginLeft: 5}}>
                         <DeleteIcon />
                       </IconButton>
 
                     </ListItem>
+          
                   ))}
                </List>
             }
         </Grid>
         <Grid item xs={4}>
-        <Box sx={{ minWidth: 275 }}>
-          <Card variant="outlined">
+        <Box sx={{ maxWidth: 300 , marginTop: 10}}>
+          <Card variant="outlined" sx={{ backgroundColor: "#fffcf2"}}>
             <CardContent>
               <Typography variant="h4">TOTAL</Typography>
-              <Typography variant="h6">${cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}</Typography>
+              <Typography variant="h6" sx={{ marginTop: 3}}>${cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}</Typography>
             </CardContent>
           </Card>
         </Box>
         </Grid>
     </Grid>
+    </div>
   )
 }
 

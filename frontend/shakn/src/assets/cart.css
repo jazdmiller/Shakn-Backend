@@ -1,0 +1,15 @@
+/* .cart-container{
+    width: 100%;
+    background-color: #DEE9F6;
+} */
+body{
+    background-color: #DEE9F6;
+}
+
+.shop-title{
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Lao MN';
+    font-size: 50px;
+    color: #707070;
+}

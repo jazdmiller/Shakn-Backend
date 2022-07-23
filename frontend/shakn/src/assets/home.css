@@ -1,0 +1,91 @@
+html, body {
+    padding: 0;
+    margin:0;
+}
+
+.home-img{
+    height: 100vh;
+    background-image: url("../../public/images/home-image.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    color: #EDEDE9;
+    font-size: 10vw;
+    font-family: 'Zephyr';
+    letter-spacing: 8px;;
+}
+
+.goodsips-banner{
+    height: 130vh;
+    background-color: #DEE9F6;
+    border-bottom: 1.5px solid #6F7130;
+}
+
+#sip-text{
+    font-size: 27px;
+    letter-spacing: 1px;
+    font-family: 'PT Serif';
+    color: #6F7130;
+    text-align: center;
+
+}
+
+.sale-text{
+    letter-spacing: 1px;
+    font-family: 'PT Serif';
+    color: #6F7130;
+    text-align: center;
+    font-size: 40px;
+}
+.sip-text-div{
+    max-width: 700px;
+}
+
+#description{
+    font-size: 25px;
+    font-family: 'PT Serif';
+}
+
+
+.finder-div{
+    height: 90vh;
+    background-color: #9A6249;
+}
+
+#scroll-container {
+    display: flex;
+    align-items: center;
+    border-top: 1.5px solid black;
+    overflow: hidden;
+    width: 100%;
+    height: 30px;
+    background-color: #DEE9F6;
+  }
+
+#scroll-text {
+    transform: scale(2);
+    transition: all 1s ease;
+    animation: my-animation 25s linear infinite;
+    font-family:'PT Serif';
+    font-size: 20px;
+    color: #6F7130;
+    white-space: nowrap;
+ 
+}
+
+@keyframes my-animation {
+    from {
+        transform: translateX(0%)
+    }
+    to {
+        transform: translateX(-50%)
+    }
+}
+
